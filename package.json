@@ -1,0 +1,24 @@
+{
+  "name": "university-students-srs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest"
+  },
+  "dependencies": {
+    "pinia": "^2.1.4",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vue/test-utils": "^2.4.1",
+    "jsdom": "^22.1.0",
+    "vite": "^4.4.6",
+    "vitest": "^0.33.0"
+  }
+}
