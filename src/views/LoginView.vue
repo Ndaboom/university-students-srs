@@ -24,34 +24,34 @@ export default {
       e.preventDefault()
       if (form.username.value != "" && form.password.value != "") {
         //Axios request
-        axios
-          .post('client/login', form)
-          .then(response => {
-            if (response) {
-              if (response.data.message == "Login successfull :)") {
-                toaster.show(`Connecté avec success`, {
-                  type: "success"
-                });
-                localStorage.setItem('username', response.data.user.username);
-                localStorage.setItem('user_category', response.data.user.user_category);
-                localStorage.setItem('user_id', response.data.user.user_id);
-                window.location = "/home";
-              } else {
-                toaster.show(response.data.message, {
-                  type: "warning"
-                });
-              }
-            }
-          })
-          .catch(error => {
-            console.log(error)
-            toaster.error(`${error}`, {
-              type: "error",
-            });
-          })
-          .finally(() => this.loading = false)
+        // axios
+        //   .post('client/login', form)
+        //   .then(response => {
+        //     if (response) {
+        //       if (response.data.message == "Login successfull :)") {
+        //         toaster.show(`Connecté avec success`, {
+        //           type: "success"
+        //         });
+        //         localStorage.setItem('username', response.data.user.username);
+        //         localStorage.setItem('user_category', response.data.user.user_category);
+        //         localStorage.setItem('user_id', response.data.user.user_id);
+        //         window.location = "/home";
+        //       } else {
+        //         toaster.show(response.data.message, {
+        //           type: "warning"
+        //         });
+        //       }
+        //     }
+        //   })
+        //   .catch(error => {
+        //     console.log(error)
+        //     toaster.error(`${error}`, {
+        //       type: "error",
+        //     });
+        //   })
+        //   .finally(() => this.loading = false)
         //Axios request
-        //window.location = "/home";
+        window.location = "/home";
       } else {
         username,
           password,
