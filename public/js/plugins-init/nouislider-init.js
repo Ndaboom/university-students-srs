@@ -965,16 +965,7 @@
     //slider range vertical bottom to top ^
 
 
-    //slider step
-    function filterPips(value, type) {
-        if (type === 0) {
-            return value < 2000 ? -1 : 0;
-        }
-        return value % 1000 ? 2 : 1;
-    }
     
-    
-    //slider step ^
 
 
     //pip position

@@ -1,7 +1,7 @@
 (function($) {
     "use strict"
 
-	var dzMorris = function(){
+	var dlabMorris = function(){
 		
 		var screenWidth = $(window).width();
 		
@@ -30,7 +30,7 @@
 				}],
 				resize: true,
 				redraw: true,
-				colors: ['#1EA7C5', 'rgb(11, 42, 151)', '#1bd084'],
+				colors: ['#4D44B5', 'rgb(98, 126, 234)', '#FB7D5B'],
 				//responsive:true,
 				
 			});
@@ -86,7 +86,7 @@
 				ykeys: ['item1'],
 				labels: ['Item 1'],
 				gridLineColor: 'transparent',
-				lineColors: ['rgb(11, 42, 151)'], //here
+				lineColors: ['rgb(1, 163, 255,1)'], //here
 				lineWidth: 1,
 				hideHover: 'auto',
 				pointSize: 0,
@@ -142,12 +142,12 @@
 				labels: ['Phone', 'Windows', 'Mac'],
 				pointSize: 3,
 				fillOpacity: 0,
-				pointStrokeColors: ['#ff6746', '#1bd084', '#1EA7C5'],
+				pointStrokeColors: ['#EE3C3C', '#FB7D5B', '#4D44B5'],
 				behaveLikeLine: true,
 				gridLineColor: 'transparent',
 				lineWidth: 3,
 				hideHover: 'auto',
-				lineColors: ['rgb(11, 42, 151)', 'rgb(27, 208, 132)', '#1EA7C5'],
+				lineColors: ['rgb(238, 60, 60)', 'rgb(0, 171, 197)', '#4D44B5'],
 				resize: true
 
 			});
@@ -157,53 +157,53 @@
 			if(jQuery('#morris_bar').length > 0)
 			{
 			//bar chart
-			Morris.Bar({
-				element: 'morris_bar',
-				data: [{
-					y: '2006',
-					a: 100,
-					b: 90,
-					c: 60
-				}, {
-					y: '2007',
-					a: 75,
-					b: 65,
-					c: 40
-				}, {
-					y: '2008',
-					a: 50,
-					b: 40,
-					c: 30
-				}, {
-					y: '2009',
-					a: 75,
-					b: 65,
-					c: 40
-				}, {
-					y: '2010',
-					a: 50,
-					b: 40,
-					c: 30
-				}, {
-					y: '2011',
-					a: 75,
-					b: 65,
-					c: 40
-				}, {
-					y: '2012',
-					a: 100,
-					b: 90,
-					c: 40
-				}],
-				xkey: 'y',
-				ykeys: ['a', 'b', 'c'],
-				labels: ['A', 'B', 'C'],
-				barColors: ['#0B2A97', '#1bd084', '#ff9f00'],
-				hideHover: 'auto',
-				gridLineColor: 'transparent',
-				resize: true,
-				barSizeRatio: 0.25,
-			});	
+				Morris.Bar({
+					element: 'morris_bar',
+					data: [{
+						y: '2006',
+						a: 100,
+						b: 90,
+						c: 60
+					}, {
+						y: '2007',
+						a: 75,
+						b: 65,
+						c: 40
+					}, {
+						y: '2008',
+						a: 50,
+						b: 40,
+						c: 30
+					}, {
+						y: '2009',
+						a: 75,
+						b: 65,
+						c: 40
+					}, {
+						y: '2010',
+						a: 50,
+						b: 40,
+						c: 30
+					}, {
+						y: '2011',
+						a: 75,
+						b: 65,
+						c: 40
+					}, {
+						y: '2012',
+						a: 100,
+						b: 90,
+						c: 40
+					}],
+					xkey: 'y',
+					ykeys: ['a', 'b', 'c'],
+					labels: ['A', 'B', 'C'],
+					barColors: ['#4D44B5', '#627eea', '#ff9f00'],
+					hideHover: 'auto',
+					gridLineColor: 'transparent',
+					resize: true,
+					barSizeRatio: 0.25,
+				});	
 			}
 		}
 		
@@ -275,7 +275,7 @@
 				xkey: 'y',
 				ykeys: ['a', 'b'],
 				labels: ['A', 'B'],
-				barColors: ['#0B2A97', "#F1F3F7"],
+				barColors: ['#4D44B5', "#F1F3F7"],
 				hideHover: 'auto',
 				gridLineColor: 'transparent',
 				resize: true,
@@ -332,7 +332,7 @@
 
 
 				],
-				lineColors: ['#1EA7C5', 'rgb(16, 202, 147)', 'rgb(11, 42, 151)'],
+				lineColors: ['#4D44B5', 'rgb(98, 126, 234)', 'rgb(235, 98, 208,1)'],
 				xkey: 'period',
 				ykeys: ['smartphone', 'windows', 'mac'],
 				labels: ['Phone', 'Windows', 'Mac'],
@@ -351,61 +351,61 @@
 			if(jQuery('#morris_area_2').length > 0)
 			{
 			//area chart
-			Morris.Area({
-				element: 'morris_area_2',
-				data: [{
-						period: '2010',
-						SiteA: 0,
-						SiteB: 0,
+				Morris.Area({
+					element: 'morris_area_2',
+					data: [{
+							period: '2010',
+							SiteA: 0,
+							SiteB: 0,
 
-					}, {
-						period: '2011',
-						SiteA: 130,
-						SiteB: 100,
+						}, {
+							period: '2011',
+							SiteA: 130,
+							SiteB: 100,
 
-					}, {
-						period: '2012',
-						SiteA: 80,
-						SiteB: 60,
+						}, {
+							period: '2012',
+							SiteA: 80,
+							SiteB: 60,
 
-					}, {
-						period: '2013',
-						SiteA: 70,
-						SiteB: 200,
+						}, {
+							period: '2013',
+							SiteA: 70,
+							SiteB: 200,
 
-					}, {
-						period: '2014',
-						SiteA: 180,
-						SiteB: 150,
+						}, {
+							period: '2014',
+							SiteA: 180,
+							SiteB: 150,
 
-					}, {
-						period: '2015',
-						SiteA: 105,
-						SiteB: 90,
+						}, {
+							period: '2015',
+							SiteA: 105,
+							SiteB: 90,
 
-					},
-					{
-						period: '2016',
-						SiteA: 250,
-						SiteB: 150,
+						},
+						{
+							period: '2016',
+							SiteA: 250,
+							SiteB: 150,
 
-					}
-				],
-				xkey: 'period',
-				ykeys: ['SiteA', 'SiteB'],
-				labels: ['Site A', 'Site B'],
-				pointSize: 0,
-				fillOpacity: 0.6,
-				pointStrokeColors: ['#b4becb', '#00A2FF'], //here
-				behaveLikeLine: true,
-				gridLineColor: 'transparent',
-				lineWidth: 0,
-				smooth: false,
-				hideHover: 'auto',
-				lineColors: ['rgb(0, 171, 197)', 'rgb(0, 0, 128)'],
-				resize: true
+						}
+					],
+					xkey: 'period',
+					ykeys: ['SiteA', 'SiteB'],
+					labels: ['Site A', 'Site B'],
+					pointSize: 0,
+					fillOpacity: 0.6,
+					pointStrokeColors: ['#b4becb', '#00A2FF'], //here
+					behaveLikeLine: true,
+					gridLineColor: 'transparent',
+					lineWidth: 0,
+					smooth: false,
+					hideHover: 'auto',
+					lineColors: ['rgb(0, 171, 197)', 'rgb(0, 0, 128)'],
+					resize: true
 
-			});	
+				});	
 			}
 		}
 		
@@ -440,18 +440,18 @@
 	}();
 
 	jQuery(document).ready(function(){
-		dzMorris.init();
-		//dzMorris.resize();
+		dlabMorris.init();
+		//dlabMorris.resize();
 	
 	});
 		
 	jQuery(window).on('load',function(){
-		//dzMorris.init();
+		//dlabMorris.init();
 	});
 		
 	jQuery( window ).resize(function() {
-		//dzMorris.resize();
-		//dzMorris.init();
+		//dlabMorris.resize();
+		//dlabMorris.init();
 	});
    
 })(jQuery);
