@@ -22,10 +22,11 @@
     											<option value="1">Oldest</option>
     											<option value="2">Recent</option>
     										</select>
-    										<!-- Button trigger modal -->
-    										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    										<router-link to="/add-student" v-slot="{ navigate }">
+    										<button type="button" class="btn btn-primary" @click="navigate">
     										 + New Student
     										</button>
+                                            </router-link>
     									</div>
     								</div>
     							</div>
