@@ -81,7 +81,7 @@ export default {
                                 <div class="col-xl-5 col-xxl-12 mr-auto">
                                     <div class="d-sm-flex d-block align-items-center">
                                         <div>
-                                            <h4 class="fs-20 text-black">Generer rapport de consommation</h4>
+                                            <h4 class="fs-20 text-black">Generate report</h4>
                                         </div>
                                     </div>
                                 </div>

@@ -1,8 +1,8 @@
 (function($) {
-    /* "use strict" */
+    "use strict" 
 
 
- var dzChartlist = function(){
+ var dlabChartlist = function(){
 	
 	var screenWidth = $(window).width();
 		
@@ -202,7 +202,7 @@
 	var simpleLineChart = function(){
 		//Simple line chart
 		new Chartist.Line('#simple-line-chart', {
-			labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
 			series: [
 			  [12, 9, 7, 8, 5],
 			  [2, 1, 3.5, 7, 3],
@@ -221,8 +221,8 @@
 	}
 	var lineTooltipsChart = function(){
 		//Line chart with tooltips
-			
-		new Chartist.Line('#line-chart-tooltips', {
+  
+		  new Chartist.Line('#line-chart-tooltips', {
 			labels: ['1', '2', '3', '4', '5', '6'],
 			series: [
 			  {
@@ -236,10 +236,10 @@
 			]
 		  },
 			  {
+			  fullWidth: true,
 			plugins: [
 			  Chartist.plugins.tooltip()
-			],
-			fullWidth: true
+			]
 		  }
 		  );
 		  
@@ -270,22 +270,21 @@
 		  
 	}
 	var withAreaChart = function(){
-	 //Line chart with area
+		//Line chart with area
 	  
-	  new Chartist.Line('#chart-with-area', {
-		labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-		series: [
-		  [5, 9, 7, 8, 5, 3, 5, 4, 3]
-		]
-	  }, {
-		low: 0,
-		showArea: true,
-		fullWidth: true,
-		plugins: [
-		  Chartist.plugins.tooltip()
-		]
-	  });
-		
+		new Chartist.Line('#chart-with-area', {
+			labels: [1, 2, 3, 4, 5, 6, 7, 8],
+			series: [
+				[5, 9, 7, 8, 5, 3, 5, 4]
+			]
+		},{
+			low: 0,
+			showArea: true,
+			fullWidth: true,
+			plugins: [
+				Chartist.plugins.tooltip()
+			]
+		});
 	}
 	var biPolarLineChart = function(){
 		//Bi-polar Line chart with area only
@@ -824,52 +823,78 @@
 	}
 	
 	/* Function ============ */
-		return {
-			init:function(){
-			},
-			
-			
-			load:function(){
-				setChartWidth();	
-				lineAnimatedChart();
-				scatterChart();	
-				simpleLineChart();	
-				lineTooltipsChart();		
-				withAreaChart();
-				biPolarLineChart();
-				svgAnimationChart();
-				lineSmoothingChart();
-				biPolarBarChart();
-				overlappingBarsChart();
-				multiLineChart();
-				stackedBarChart();
-				horizontalBarChart();
-				extremeChart();
-				labelPlacementChart();
-				animatingDonutChart();
-				simplePieChart();
-				pieChart();
-				gaugeChart();
-				differentSeriesChart();
-				svgDotAnimationChart(); 
-			},
-			
-			resize:function(){
-				
-			}
-		}
-	
-	}();
-
-	jQuery(document).ready(function(){
-	});
+	return {
+		init:function(){
+		},
 		
-	jQuery(window).on('load',function(){
-		dzChartlist.load();
-	});
+		
+		load:function(){
+			setChartWidth();	
+			lineAnimatedChart();
+			scatterChart();	
+			simpleLineChart();	
+			lineTooltipsChart();		
+			withAreaChart();
+			biPolarLineChart();
+			svgAnimationChart();
+			lineSmoothingChart();
+			biPolarBarChart();
+			overlappingBarsChart();
+			multiLineChart();
+			stackedBarChart();
+			horizontalBarChart();
+			extremeChart();
+			labelPlacementChart();
+			animatingDonutChart();
+			simplePieChart();
+			pieChart();
+			gaugeChart();
+			differentSeriesChart();
+			svgDotAnimationChart(); 
+		},
+		
+		resize:function(){
+			setChartWidth();	
+			lineAnimatedChart();
+			scatterChart();	
+			simpleLineChart();	
+			lineTooltipsChart();		
+			withAreaChart();
+			biPolarLineChart();
+			svgAnimationChart();
+			lineSmoothingChart();
+			biPolarBarChart();
+			overlappingBarsChart();
+			multiLineChart();
+			stackedBarChart();
+			horizontalBarChart();
+			extremeChart();
+			labelPlacementChart();
+			animatingDonutChart();
+			simplePieChart();
+			pieChart();
+			gaugeChart();
+			differentSeriesChart();
+			svgDotAnimationChart();
+		}
+	}
 
-	jQuery(window).on('resize',function(){
-		dzChartlist.resize();
-	});     
+}();
+
+jQuery(document).ready(function(){
+});
+	
+jQuery(window).on('load',function(){
+	setTimeout(function(){
+		dlabChartlist.resize();	
+	}, 1000);
+});
+
+jQuery(window).on('resize',function(){
+	setTimeout(function(){
+		dlabChartlist.resize();	
+	}, 1000);
+	
+});     
 
 })(jQuery);

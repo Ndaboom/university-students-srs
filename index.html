@@ -2,68 +2,127 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="images/app-logo.png">
-  <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
-  <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-  <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap"
-    rel="stylesheet">
-  <title>University RSS</title>
-</head>
-<style>
-  .login_box {
-    background-color: #f5eeee;
-  }
-
-  .authincation-content {
-    background-color: #f5f5ee;
-  }
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Sammy Ndabo">
+  <meta name="robots" content="">
+  <meta name="keywords"
+    content="school, school admin, education, academy, admin dashboard, college, college management, education management, institute, school management, school management system, student management, teacher management, university, university management">
+  <meta name="description"
+    content="USRS - University Student Registration System Software">
+  <meta property="og:title" content="USRS : School and Education University Student Registration System Dashboard Template">
+  <meta property="og:description"
+    content="USRS - Some description here">
+  <meta property="og:image" content="images/">
+  <meta name="format-detection" content="telephone=no">
   
-  .authincation {
-    margin-left: auto;
-    margin-right: auto;
-  } 
+  <!-- Mobile Specific -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Page Title Here -->
+  <title>University Student Registration System</title>
+  
+  <!-- FAVICONS ICON -->
+  <link rel="shortcut icon" type="image/png" href="images/app-logo.png">
+  <link href="vendor/wow-master/css/libs/animate.css" rel="stylesheet">
+  <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/bootstrap-select-country/css/bootstrap-select-country.min.css">
+  <link rel="stylesheet" href="vendor/jquery-nice-select/css/nice-select.css">
+  <link href="vendor/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  
+  <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+  <!--swiper-slider-->
+  <link rel="stylesheet" href="vendor/swiper/css/swiper-bundle.min.css">
+  <!-- Style css -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <style>
+    .login_box {
+      background-color: #f5eeee;
+    }
+  
+    #login_btn {
+      background-color: #f7e303;
+    }
+  
+    .active {
+      color: #f7e303;
+    }
+  
+    .app-logo {
+      width: 50px;
+      height: 50px;
+    }
 
-  #login_btn {
-    background-color: #f7e303;
-  }
+    @media (min-width: 992px) {
+    .authincation {
+      min-width: 1324px;
+    }
+   }
 
-  .active {
-    color: #f7e303;
-  }
+   .app-logo {
+    width: 50px !important;
+    height: 50px !important;
+   }
 
-  .app-logo {
-    width: 50px;
-    height: 50px;
-  }
-</style>
+    #app {
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+  </style>
+</head>
+
 
 <body>
+  <!--*******************
+          Preloader start
+  ********************-->
+  <div id="preloader">
+    <div class="loader">
+      <div class="dots">
+        <div class="dot mainDot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+  <!--*******************
+          Preloader end
+  ********************-->
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
-  <!--**********************************
-        Scripts
-    ***********************************-->
+
   <!-- Required vendors -->
   <script src="vendor/global/global.min.js"></script>
-  <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
   <script src="vendor/chart.js/Chart.bundle.min.js"></script>
-  <script src="js/custom.min.js"></script>
-  <script src="js/deznav-init.js"></script>
-  <script src="vendor/owl-carousel/owl.carousel.js"></script>
-
-  <!-- Chart piety plugin files -->
-  <script src="vendor/peity/jquery.peity.min.js"></script>
-
+  <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
   <!-- Apex Chart -->
   <script src="vendor/apexchart/apexchart.js"></script>
-
+  <!-- Chart piety plugin files -->
+  <script src="vendor/peity/jquery.peity.min.js"></script>
+  <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+  <!--swiper-slider-->
+  <script src="vendor/swiper/js/swiper-bundle.min.js"></script>
+  
+  
+  <!-- Datatable -->
+  <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="js/plugins-init/datatables.init.js"></script>
+  
   <!-- Dashboard 1 -->
   <script src="js/dashboard/dashboard-1.js"></script>
+  <script src="vendor/wow-master/dist/wow.min.js"></script>
+  <script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+  <script src="vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+  <script src="vendor/bootstrap-select-country/js/bootstrap-select-country.min.js"></script>
+  
+  <script src="js/dlabnav-init.js"></script>
+  <script src="js/custom.min.js"></script>
+  <script src="js/demo.js"></script>
+  <script src="js/styleSwitcher.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,10 @@
 (function($) {
-    /* "use strict" */
-
-
- var dzSparkLine = function(){
-	
-	var screenWidth = $(window).width();
+    "use strict" 
+   
+ var dlabSparkLine = function(){
     
+	var screenWidth = $(window).width();
+	
 	function getSparkLineGraphBlockSize(selector)
 	{
 		var screenWidth = $(window).width();
@@ -13,7 +12,7 @@
 		
 		if(screenWidth <= 768)
 			{
-				screenWidth = (screenWidth < 300 )?screenWidth:200;
+				screenWidth = (screenWidth < 300 )?screenWidth:300;
 				
 				var blockWidth  = jQuery(selector).parent().innerWidth() - jQuery(selector).parent().width();
 		
@@ -37,10 +36,11 @@
 				barWidth: "4",
 				resize: !0,
 				barSpacing: "5",
-				barColor: "#0B2A97"
+				barColor: "#4D44B5"
 			});
 		}
 	}
+	
 	var sparkLine8 = function(){
 		if(jQuery('#sparkline8').length > 0 ){	
 			$("#sparkline8").sparkline([79, 72, 29, 6, 52, 32, 73, 40, 14, 75, 77, 39, 9, 15, 10], {
@@ -48,46 +48,47 @@
 				//width: "100%",
 				width: getSparkLineGraphBlockSize('#sparkline8'),
 				height: "50",
-				lineColor: "#0B2A97",
-				fillColor: "rgba(11, 42, 151, .5)",
-				minSpotColor: "#0B2A97",
-				maxSpotColor: "#0B2A97",
-				highlightLineColor: "#0B2A97",
-				highlightSpotColor: "#0B2A97",
+				lineColor: "#4D44B5",
+				fillColor: "rgba(251,125,91,1)",
+				minSpotColor: "#4D44B5",
+				maxSpotColor: "#4D44B5",
+				highlightLineColor: "#4D44B5",
+				highlightSpotColor: "#4D44B5",
 				
 			});
 		}
 	}
+	
 	var sparkLine9 = function(){
 		if(jQuery('#sparkline9').length > 0 ){	
 			$("#sparkline9").sparkline([27, 31, 35, 28, 45, 52, 24, 4, 50, 11, 54, 49, 72, 59, 75], {
 				type: "line",
 				//width: "100%",
 				width: getSparkLineGraphBlockSize('#sparkline9'),
-				//width: '200',
 				height: "50",
-				lineColor: "#8bc740",
-				fillColor: "rgba(139, 199, 64, .5)",
-				minSpotColor: "#8bc740",
-				maxSpotColor: "#8bc740",
+				lineColor: "#627eea",
+				fillColor: "rgba(255, 92, 0, .5)",
+				minSpotColor: "#627eea",
+				maxSpotColor: "#627eea",
 				highlightLineColor: "rgb(255, 159, 0)",
-				highlightSpotColor: "#8bc740"
+				highlightSpotColor: "#627eea"
 			});
 		}
 	}
 
+    // Bar Chart
 	var sparkBar = function(){
-			// Bar Chart
 		if(jQuery('#spark-bar').length > 0 ){	
 			$("#spark-bar").sparkline([33, 22, 68, 54, 8, 30, 74, 7, 36, 5, 41, 19, 43, 29, 38], {
 				type: "bar",
 				height: "200",
 				barWidth: 6,
 				barSpacing: 7,
-				barColor: "#1bd084"
+				barColor: "#FB7D5B"
 			});
 		}	
-	}	
+	}
+		
 	var sparkBar2 = function(){
 		if(jQuery('#spark-bar-2').length > 0 ){	
 			$("#spark-bar-2").sparkline([33, 22, 68, 54, 8, 30, 74, 7, 36, 5, 41, 19, 43, 29, 38], {
@@ -99,7 +100,8 @@
 				barColor: "rgb(255, 206, 120)"
 			});
 		}	
-	}	
+	}
+		
 	var stackedBarChart = function(){
 		if(jQuery('#StackedBarChart').length > 0 ){	
 			$('#StackedBarChart').sparkline([
@@ -112,10 +114,11 @@
 					height: "200",
 					barWidth: 10,
 					barSpacing: 7, 
-					stackedBarColor: ['#0B2A97', '#1bd084', '#ff6746']
+					stackedBarColor: ['#4D44B5', '#FB7D5B', '#627eea']
 				});
 		}
 	}
+		
 	var triState = function(){
 		if(jQuery('#tristate').length > 0 ){	
 
@@ -124,11 +127,12 @@
 				height: "200",
 				barWidth: 10,
 				barSpacing: 7, 
-				colorMap: ['#0B2A97', '#1bd084', '#ff6746'], 
-				negBarColor: '#ff6746'
+				colorMap: ['#4D44B5', '#FB7D5B', '#627eea'], 
+				negBarColor: '#627eea'
 			});
 		}
 	}
+		
 	var compositeBar = function(){
 		// Composite
 		if(jQuery('#composite-bar').length > 0 ){
@@ -138,22 +142,23 @@
 				barWidth: "10",
 				resize: true,
 				// barSpacing: "7",
-				barColor: "#0B2A97", 
+				barColor: "#4D44B5", 
 				width: '100%',
 				
 			});
 		}	
 	}	
+	
 	var sparklineCompositeChart = function(){
 		if(jQuery('#sparkline-composite-chart').length > 0 ){
 			$("#sparkline-composite-chart").sparkline([5, 6, 7, 2, 0, 3, 6, 8, 1, 2, 2, 0, 3, 6], {
 				type: 'line',
 				width: '100%',
 				height: '200', 
-				barColor: '#1bd084', 
-				colorMap: ['#1bd084', '#ff6746']
+				barColor: '#FB7D5B', 
+				colorMap: ['#FB7D5B', '#627eea']
 			});
-		}	
+		}
 		if(jQuery('#sparkline-composite-chart').length > 0 ){
 			$("#sparkline-composite-chart").sparkline([5, 6, 7, 2, 0, 3, 6, 8, 1, 2, 2, 0, 3, 6], {
 				type: 'bar',
@@ -161,12 +166,13 @@
 				width: '100%',
 				barWidth: 10,
 				barSpacing: 5,
-				barColor: '#34C73B',
-				negBarColor: '#34C73B',
+				barColor: '#4D44B5',
+				negBarColor: '#4D44B5',
 				composite: true,
 			});
 		}
 	}
+		
 	var sparkLine11 = function(){
 		if(jQuery('#sparkline11').length > 0 ){
 			//Pie
@@ -174,10 +180,11 @@
 				type: "pie",
 				height: "100px",
 				resize: !0,
-				sliceColors: ["rgba(192, 10, 39, .5)", "rgba(0, 0, 128, .5)", "rgba(11, 42, 151, .5)"]
+				sliceColors: ["rgba(192, 10, 39, .5)", "rgba(0, 0, 128, .5)", "rgba(251,125,91,1)"]
 			});
 		}	
 	}	
+	
 	var sparkLine12 = function(){
 		if(jQuery('#sparkline12').length > 0 ){
 			//Pie
@@ -189,6 +196,7 @@
 			});
 		}	
 	}	
+	
 	var bulletChart = function(){
 		if(jQuery('#bullet-chart').length > 0 ){
 			// Bullet
@@ -206,6 +214,7 @@
 			});
 		}
 	}
+		
 	var boxPlot = function(){
 		if(jQuery('#boxplot').length > 0 ){
 			//Boxplot
@@ -214,10 +223,9 @@
 			});
 		}
 	}
-
-    
-
-	/* Function ============ */
+	
+	
+    /* Function ============ */
 		return {
 			init:function(){
 			},
@@ -262,12 +270,15 @@
 	});
 		
 	jQuery(window).on('load',function(){
-		dzSparkLine.load();
+		setTimeout(function(){
+			dlabSparkLine.resize();	
+		}, 1000);
 	});
 
 	jQuery(window).on('resize',function(){
-		dzSparkLine.resize();
-		
+		setTimeout(function(){
+			dlabSparkLine.resize();	
+		}, 1000);
 	});     
 
 })(jQuery);

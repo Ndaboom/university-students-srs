@@ -6,7 +6,7 @@
 /****************
 Piety chart
 *****************/
-var dzPiety = function(){
+var dlabPiety = function(){
 	
 	var getGraphBlockSize = function (selector) {
 		var screenWidth = $(window).width();
@@ -39,7 +39,7 @@ var dzPiety = function(){
     var handlePietyPie = function(){
 		if(jQuery('span.pie').length > 0 ){
 			$("span.pie").peity("pie", {
-				fill: ['#0B2A97', 'rgba(11, 42, 151, .3)'], 
+				fill: ['#4D44B5', 'rgba(77, 68,181, .3)'], 
 				width: "100",
 				height: "100"
 			});
@@ -58,8 +58,8 @@ var dzPiety = function(){
 	var handlePietyLine = function(){
 		if(jQuery('.peity-line').length > 0 ){
 			$(".peity-line").peity("line", {
-				fill: ["rgba(11, 42, 151, .5)"], 
-				stroke: '#0B2A97', 
+				fill: ["rgba(77, 68,181,1)"], 
+				stroke: '#4D44B5', 
 				width: "100%",
 				height: "100"
 			});
@@ -94,7 +94,7 @@ var dzPiety = function(){
 	var handlePietyBar = function(){
 		if(jQuery('.bar').length > 0 ){
 			$(".bar").peity("bar", {
-				fill: ["#0B2A97", "#209f84", "#2781d5"],  
+				fill: ["#4D44B5", "#FB7D5B", "#4D44B5"],  
 				width: "100%",
 				height: "100",
 			});
@@ -104,7 +104,7 @@ var dzPiety = function(){
 	var handlePietyBar1 = function(){
 		if(jQuery('.bar1').length > 0 ){
 			$(".bar1").peity("bar", {
-				fill: ["#0B2A97", "#209f84", "#2781d5"],    
+				fill: ["#4D44B5", "#FB7D5B", "#4D44B5"],    
 				//width: "100%",
 				width: getGraphBlockSize('.bar1'),
 				height: "140"
@@ -115,7 +115,7 @@ var dzPiety = function(){
 	var handlePietyBarColours1 = function(){
 		if(jQuery('.bar-colours-1').length > 0 ){
 			$(".bar-colours-1").peity("bar", {
-				fill: ["#0B2A97", "#209f84", "#2781d5"],  
+				fill: ["#4D44B5", "#FB7D5B", "#4D44B5"],  
 				width: "100",
 				height: "100"
 			});
@@ -159,7 +159,7 @@ var dzPiety = function(){
     var handlePietyColours2 = function(){
 		if(jQuery('.pie-colours-2').length > 0 ){
 			$(".pie-colours-2").peity("pie", {
-				fill: ["#0B2A97", "#209f84", "#2781d5", "#FF9B52", "#f72b50"],
+				fill: ["#4D44B5", "#FB7D5B", "#4D44B5", "#ff5c00", "#EE3C3C"],
 				width: "100",
 				height: "100"
 			});
@@ -174,8 +174,8 @@ var dzPiety = function(){
     
     var handlePietyUpdatingChart = function(){
 		var t = $(".updating-chart").peity("line", {
-			fill: ['rgba(11, 42, 151, .5)'],
-			stroke: 'rgb(11, 42, 151)', 
+			fill: ['rgba(251,125,91,1)'],
+			stroke: 'rgb(77, 68,181)', 
 			width: "100%",
 			height: 100
 		});
@@ -212,7 +212,21 @@ var dzPiety = function(){
 		},
 		
 		resize:function(){
-			
+			handlePietyBarLine();
+			handlePietyPie();
+			handlePietyDonut();
+			handlePietyLine();
+			handlePietyLine2();
+			handlePietyLine3();
+			handlePietyBar();
+			handlePietyBar1();
+			handlePietyBarColours1();
+			handlePietyBarColours2();
+			handlePietyBarColours3();
+			handlePietyColours1();
+			handlePietyColours2();
+			handlePietyDataAttr();
+			//handlePietyUpdatingChart();
 		}
 	}
 	
@@ -226,14 +240,14 @@ var dzPiety = function(){
 		
 	jQuery(window).on('load',function(){
 		setTimeout(function(){
-			dzPiety.load();
+			dlabPiety.load();
 		}, 1000); 
 		
 	});
 
 	jQuery(window).on('resize',function(){
 		setTimeout(function(){
-			dzPiety.resize();
+			dlabPiety.resize();
 		}, 1000); 
 		
 	});      

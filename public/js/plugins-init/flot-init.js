@@ -1,8 +1,8 @@
 (function($) {
-    /* "use strict" */
+   "use strict"
 
 
- var dzChartlist = function(){
+ var dlabChartlist = function(){
 	
 	var screenWidth = $(window).width();
 
@@ -14,7 +14,7 @@
 				bars: {
 					show: true,
 					lineWidth: 0,
-					fillColor: '#0B2A97'
+					fillColor: '#4D44B5'
 				}
 			},
 			grid: {
@@ -24,33 +24,34 @@
 			yaxis: {
 				tickColor: 'transparent',
 				font: {
-					color: '#fff',
+					color: '#a3afb7',
 					size: 10
 				}
 			},
 			xaxis: {
 				tickColor: 'transparent',
 				font: {
-					color: '#fff',
+					color: '#a3afb7',
 					size: 10
 				}
 			}
 		});
 	}
+	
 	var flotBar2 = function(){
 		$.plot("#flotBar2", [{
 			data: [[0, 3], [2, 8], [4, 5], [6, 13], [8, 5], [10, 7], [12, 8], [14, 10]],
 			bars: {
 				show: true,
 				lineWidth: 0,
-				fillColor: '#0B2A97'
+				fillColor: '#4D44B5'
 			}
 		}, {
 			data: [[1, 5], [3, 7], [5, 10], [7, 7], [9, 9], [11, 5], [13, 4], [15, 6]],
 			bars: {
 				show: true,
 				lineWidth: 0,
-				fillColor: '#1EA7C5'
+				fillColor: '#FB7D5B'
 			}
 		}], 
 		{
@@ -61,19 +62,20 @@
 			yaxis: {
 				tickColor: 'transparent',
 				font: {
-					color: '#fff',
+					color: '#a3afb7',
 					size: 10
 				}
 			},
 			xaxis: {
 				tickColor: 'transparent',
 				font: {
-					color: '#fff',
+					color: '#a3afb7',
 					size: 10
 				}
 			}
 		});
 	}
+	
 	var flotLine1 = function(){
 		var newCust = [[0, 2], [1, 3], [2, 6], [3, 5], [4, 7], [5, 8], [6, 10]];
 		var retCust = [[0, 1], [1, 2], [2, 5], [3, 3], [4, 5], [5, 6], [6, 9]];
@@ -82,12 +84,12 @@
 			{
 				data: newCust,
 				label: 'New Customer',
-				color: '#0B2A97'
+				color: '#4D44B5'
 			},
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#1EA7C5'
+				color: '#FB7D5B'
 			}
 		],
 		{
@@ -119,18 +121,19 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#999'
+					color: '#a3afb7'
 				}
 			},
 			xaxis: {
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#999'
+					color: '#a3afb7'
 				}
 			}
 		});
 	}
+	
 	var flotLine2 = function(){
 		var newCust = [[0, 2], [1, 3], [2, 6], [3, 5], [4, 7], [5, 8], [6, 10]];
 		var retCust = [[0, 1], [1, 2], [2, 5], [3, 3], [4, 5], [5, 6], [6, 9]];
@@ -139,12 +142,12 @@
 			{
 				data: newCust,
 				label: 'New Customer',
-				color: '#0B2A97'
+				color: '#4D44B5'
 			},
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#1EA7C5'
+				color: '#FB7D5B'
 			}
 		],
 		{
@@ -181,14 +184,14 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			},
 			xaxis: {
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			}
 		});		
@@ -202,12 +205,12 @@
 			{
 				data: newCust2,
 				label: 'New Customer',
-				color: '#0B2A97'
+				color: '#4D44B5'
 			},
 			{
 				data: retCust2,
 				label: 'Returning Customer',
-				color: '#1EA7C5'
+				color: '#FB7D5B'
 			}
 		],
 		{
@@ -239,18 +242,19 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			},
 			xaxis: {
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			}
 		});
 	}
+	
 	var flotArea1 = function(){
 		var newCust = [[0, 2], [1, 3], [2, 6], [3, 5], [4, 7], [5, 8], [6, 10]];
 		var retCust = [[0, 1], [1, 2], [2, 5], [3, 3], [4, 5], [5, 6], [6, 9]];
@@ -259,12 +263,12 @@
 			{
 				data: newCust,
 				label: 'New Customer',
-				color: '#0B2A97'
+				color: '#4D44B5'
 			},
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#1EA7C5'
+				color: '#FB7D5B'
 			}
 		],
 		{
@@ -297,18 +301,19 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			},
 			xaxis: {
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			}
 		});
 	}
+	
 	var flotArea2 = function(){
 		var newCust = [[0, 2], [1, 3], [2, 6], [3, 5], [4, 7], [5, 8], [6, 10]];
 		var retCust = [[0, 1], [1, 2], [2, 5], [3, 3], [4, 5], [5, 6], [6, 9]];
@@ -317,12 +322,12 @@
 			{
 				data: newCust,
 				label: 'New Customer',
-				color: '#0B2A97'
+				color: '#4D44B5'
 			},
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#1EA7C5'
+				color: '#FB7D5B'
 			}
 		],
 		{
@@ -359,18 +364,19 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			},
 			xaxis: {
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			}
 		});
 	}
+	
 	var flotLine4 = function(){
 		var previousPoint = null;
 
@@ -401,8 +407,6 @@
 		});
 	}
 
-	
-	
 	function showTooltip(x, y, contents) {
 		$('<div id="tooltip" class="tooltipflot">' + contents + '</div>').css({
 			position: 'absolute',
@@ -442,7 +446,7 @@
 		var updateInterval = 1000;
 
 		var plot4 = $.plot('#flotRealtime1', [getRandomData()], {
-			colors: ['#0B2A97'],
+			colors: ['#4D44B5'],
 			series: {
 				lines: {
 					show: true,
@@ -459,7 +463,7 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			},
 			yaxis: {
@@ -468,7 +472,7 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			}
 		});
@@ -479,6 +483,7 @@
 			setTimeout(update_plot4, updateInterval);
 		}
 	}
+	
 	var flotRealtime2 = function(){
 		var data = [], totalPoints = 50;
 
@@ -506,7 +511,7 @@
 		var updateInterval = 1000;
 		
 		var plot5 = $.plot('#flotRealtime2', [getRandomData()], {
-			colors: ['#0B2A97'],
+			colors: ['#4D44B5'],
 			series: {
 				lines: {
 					show: true,
@@ -524,7 +529,7 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			},
 			yaxis: {
@@ -533,7 +538,7 @@
 				color: 'transparent',
 				font: {
 					size: 10,
-					color: '#fff'
+					color: '#a3afb7'
 				}
 			}
 		});
@@ -549,43 +554,40 @@
 		}
 	}
 	
-
-	
-
 	/* Function ============ */
-		return {
-			init:function(){
-			},
-			
-			
-			load:function(){
-				flotBar1();	
-				flotBar2();
-				flotLine1();	
-				flotLine2();	
-				flotLine3();		
-				flotArea1();
-				flotArea2();
-				flotLine4();
-				flotRealtime1();
-				flotRealtime2();
-			},
-			
-			resize:function(){
-			}
-		}
-	
-	}();
-
-	jQuery(document).ready(function(){
-	});
+	return {
+		init:function(){
+		},
 		
-	jQuery(window).on('load',function(){
-		dzChartlist.load();
-	});
+		
+		load:function(){
+			flotBar1();	
+			flotBar2();
+			flotLine1();	
+			flotLine2();	
+			flotLine3();		
+			flotArea1();
+			flotArea2();
+			flotLine4();
+			flotRealtime1();
+			flotRealtime2();
+		},
+		
+		resize:function(){
+		}
+	}
 
-	jQuery(window).on('resize',function(){
-		dzChartlist.resize();
-	});     
+}();
+
+jQuery(document).ready(function(){
+});
+	
+jQuery(window).on('load',function(){
+	dlabChartlist.load();
+});
+
+jQuery(window).on('resize',function(){
+	dlabChartlist.resize();
+});     
 
 })(jQuery);

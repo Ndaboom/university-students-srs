@@ -7,9 +7,12 @@ export default {
 }
 </script>
 <template>
-    <div class="footer">
-            <div class="copyright">
-                <p>Copyright © &amp; Lifti sarl  2022</p>
-            </div>
-        </div>
+    <!--**********************************
+			Footer start
+		***********************************-->
+    		<div class="footer footer-outer">
+    			<div class="copyright">
+    				<p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Sammy Ndabo & Leslie Mitima</a> 2023</p>
+    			</div>
+    		</div>
 </template>
