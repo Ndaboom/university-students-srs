@@ -17,6 +17,16 @@ const router = createRouter({
           path: "/dashboard",
           name: "dashboard",
           component: () => import('@/views/DashboardView.vue').then((m) => m.default || (m)),
+        },
+        {
+          path: "/add-student",
+          name: "add-student",
+          component: () => import('@/views/Students/AddNewStudentView.vue').then((m) => m.default || (m)),
+        },
+        {
+          path: "/students",
+          name: "students",
+          component: () => import('@/views/Students/StudentsView.vue').then((m) => m.default || (m)),
         }
       ]
     },

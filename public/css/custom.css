@@ -2,3 +2,11 @@
   margin-top: 9px !important;
   color: white !important;
 }
+
+.content-body {
+  min-width: 1118px !important;
+}
+
+.container-fluid {
+  min-height: 730px !important;
+}
