@@ -98,7 +98,7 @@
     															</svg>
     														</div>
     														<div class="dropdown-menu dropdown-menu-end">
-    															<a class="dropdown-item" href="javascript:void(0);">Option 1</a>
+    															<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#studentCardPreview" href="javascript:void(0);">Generate Student Card</a>
     															<a class="dropdown-item" href="javascript:void(0);">Option 2</a>
     															<a class="dropdown-item" href="javascript:void(0);">Option 3</a>
     														</div>
@@ -153,7 +153,7 @@
     															</svg>
     														</div>
     														<div class="dropdown-menu dropdown-menu-end">
-    															<a class="dropdown-item" href="javascript:void(0);">Option 1</a>
+    															<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#studentCardPreview" >Generate Student Card</a>
     															<a class="dropdown-item" href="javascript:void(0);">Option 2</a>
     															<a class="dropdown-item" href="javascript:void(0);">Option 3</a>
     														</div>
@@ -173,11 +173,16 @@
 				***********************************-->
     			</div>
     		</div>
+            <StudentCard />
 </template>
 
 <script>
+import StudentCard from '../../components/StudentCard.vue';
 export default {
-  name: "Students"
+  name: "Students",
+  components:{
+    StudentCard,
+  }
 }
 </script>
 
