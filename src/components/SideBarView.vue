@@ -52,16 +52,12 @@ export default {
 
     					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
     						<i class="material-symbols-outlined">person</i>
-    						<span class="nav-text">Teachers</span>
+    						<span class="nav-text">Data Sorting & Filtering</span>
     					</a>
     					<ul aria-expanded="false">
     						<li>
-								<router-link to="/teachers">Teachers</router-link>
+								<router-link to="/teachers">General</router-link>
 							</li>
-    						<li>
-								<router-link to="/add-teacher">Add New Teacher</router-link>
-							</li>
-						
     					</ul>
     					</li>
     				</ul>
