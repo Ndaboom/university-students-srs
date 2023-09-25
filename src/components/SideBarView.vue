@@ -50,6 +50,20 @@ export default {
     					</ul>
     					</li>
 
+						<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+	    						<i class="material-symbols-outlined">school</i>
+	    						<span class="nav-text">Department</span>
+	    					</a>
+	    					<ul aria-expanded="false">
+	    						<li>
+									<router-link to="/departments">Departments</router-link>
+								</li>
+	    						<li>
+									<router-link to="/add-department">Add New Department</router-link>
+								</li>
+	    					</ul>
+	    				</li>
+
     					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
     						<i class="material-symbols-outlined">person</i>
     						<span class="nav-text">Data Sorting & Filtering</span>
