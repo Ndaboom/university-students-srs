@@ -52,17 +52,31 @@ export default {
 
 						<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 	    						<i class="material-symbols-outlined">school</i>
-	    						<span class="nav-text">Department</span>
+	    						<span class="nav-text">School</span>
 	    					</a>
 	    					<ul aria-expanded="false">
 	    						<li>
-									<router-link to="/departments">Departments</router-link>
+									<router-link to="/schools">Schools</router-link>
 								</li>
 	    						<li>
-									<router-link to="/add-department">Add New Department</router-link>
+									<router-link to="/add-school">Add New School</router-link>
 								</li>
 	    					</ul>
 	    				</li>
+
+						<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+								<i class="material-symbols-outlined">school</i>
+								<span class="nav-text">School</span>
+							</a>
+							<ul aria-expanded="false">
+								<li>
+									<router-link to="/departments">Departments</router-link>
+								</li>
+								<li>
+									<router-link to="/add-department">Add New Department</router-link>
+								</li>
+							</ul>
+						</li>
 
     					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
     						<i class="material-symbols-outlined">person</i>
