@@ -37,6 +37,16 @@ const router = createRouter({
           path: "/departments",
           name: "departments",
           component: () => import('@/views/Departments/DepartmentsView.vue').then((m) => m.default || (m)),
+        },
+        {
+          path: "/add-school",
+          name: "add-school",
+          component: () => import('@/views/Schools/AddNewSchoolView.vue').then((m) => m.default || (m)),
+        },
+        {
+          path: "/schools",
+          name: "schools",
+          component: () => import('@/views/Schools/SchoolsView.vue').then((m) => m.default || (m)),
         }
       ]
     },
