@@ -3,7 +3,7 @@ import { reactive } from '@vue/reactivity';
 import { createToaster } from "@meforma/vue-toaster";
 import { mapActions } from 'pinia';
 import { authStore } from '@/stores/index';
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   name: "LoadingView",
@@ -20,45 +20,47 @@ export default {
       dismissible: "true"
     });
 
+    const headers = {
+      'Content-type': 'application/json',
+      'Custom-Header': 'Custom-Value', // Add any custom headers if required
+    };
+
     function Login(e) {
       e.preventDefault()
       if (form.username.value != "" && form.password.value != "") {
         //Axios request
-        // axios
-        //   .post('client/login', form)
-        //   .then(response => {
-        //     if (response) {
-        //       if (response.data.message == "Login successfull :)") {
-        //         toaster.show(`Connecté avec success`, {
-        //           type: "success"
-        //         });
-        //         localStorage.setItem('username', response.data.user.username);
-        //         localStorage.setItem('user_category', response.data.user.user_category);
-        //         localStorage.setItem('user_id', response.data.user.user_id);
-        //         window.location = "/home";
-        //       } else {
-        //         toaster.show(response.data.message, {
-        //           type: "warning"
-        //         });
-        //       }
-        //     }
-        //   })
-        //   .catch(error => {
-        //     console.log(error)
-        //     toaster.error(`${error}`, {
-        //       type: "error",
-        //     });
-        //   })
-        //   .finally(() => this.loading = false)
+        axios
+          .post('http://localhost:8080/auth/generateToken', form)
+          .then(response => {
+            if (response) {
+              if (response.data.httpStatus == "OK") {
+                toaster.show(`Connecté avec success`, {
+                  type: "success"
+                });
+                localStorage.setItem('token', response.data);
+                window.location = "/home";
+              } else {
+                toaster.show(response.data.message, {
+                  type: "warning"
+                });
+              }
+            }
+          })
+          .catch(error => {
+            toaster.error(`${error}`, {
+              type: "error",
+            });
+          })
+          .finally(() => this.loading = false)
         //Axios request
-        window.location = "/home";
+        //window.location = "/home";
       } else {
         username,
           password,
           console.log("Please fill all required fields")
-		toaster.show(`Veuiller remplir tous les champs`, {
-		type: "error"
-		})
+          toaster.show(`Veuiller remplir tous les champs`, {
+          type: "error"
+          })
       }
     }
 

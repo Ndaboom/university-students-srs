@@ -50,7 +50,8 @@ export default {
     					</ul>
     					</li>
 
-						<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+						<li>
+							<a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 	    						<i class="material-symbols-outlined">school</i>
 	    						<span class="nav-text">School</span>
 	    					</a>
@@ -84,7 +85,7 @@ export default {
     					</a>
     					<ul aria-expanded="false">
     						<li>
-								<router-link to="/teachers">General</router-link>
+								<router-link to="/sort_filters">General</router-link>
 							</li>
     					</ul>
     					</li>
