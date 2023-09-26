@@ -47,7 +47,7 @@ export default {
             }
           })
           .catch(error => {
-            toaster.error(`${error}`, {
+            toaster.error(`Something went wrong please try again... - ${error}`, {
               type: "error",
             });
           })
