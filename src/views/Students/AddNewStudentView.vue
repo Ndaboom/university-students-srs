@@ -85,12 +85,6 @@
     									  <label for="exampleFormControlInput9" class="form-label text-primary">Department<span class="required">*</span></label>
     									  <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Computer Science">
     									</div>
-    									<div class="mb-3">
-    									  <label for="exampleFormControlTextarea2" class="form-label text-primary">Address<span class="required">*</span></label>
-    									  <textarea class="form-control" id="exampleFormControlTextarea2" rows="6">
-										 
-									  </textarea>
-    									</div>
     								</div>
 								
     								<div class="col-xl-6 col-sm-6">
