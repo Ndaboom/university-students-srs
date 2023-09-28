@@ -6,9 +6,7 @@ export default {
         let username = localStorage.getItem('username');
 
 		function logout(){
-            localStorage.setItem('username', null);
-            localStorage.setItem('user_category', null);
-            localStorage.setItem('user_id', null);
+            localStorage.clear();
 			window.location = "/";
 		}
         
