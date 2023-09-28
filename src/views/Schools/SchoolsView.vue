@@ -50,7 +50,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for="school in schools" :key="school">
                                             <td>
                                                 <div class="checkbox me-0 align-self-center">
                                                     <div class="custom-control custom-checkbox ">
@@ -60,9 +60,9 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><h4 class="mb-0">Science and technology</h4></td>
+                                            <td><h4 class="mb-0">{{ school.schoolName }}</h4></td>
                                             <td>
-                                                <h6 class="mb-0">Short description</h6>
+                                                <h6 class="mb-0">{{ school.schoolDescription }}</h6>
                                             </td>
 
                                             <td>
@@ -76,11 +76,8 @@
                                                         </svg>
                                                     </div>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" data-bs-toggle="modal"
-                                                            data-bs-target="#studentCardPreview"
-                                                            href="javascript:void(0);">Generate Student Card</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">Option 2</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">Option 3</a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -101,9 +98,58 @@
 </template>
 
 <script>
+import { reactive, ref } from '@vue/reactivity';
+import { createToaster } from "@meforma/vue-toaster";
+import { onMounted } from '@vue/runtime-core';
+import axios from 'axios'
+
+
 export default {
     name: "Schools",
+    setup() {
 
+        const toaster = createToaster({
+            position: "top-right",
+            pauseOnHover: "true",
+            dismissible: "true"
+        });
+
+        const schools = ref([]);
+        axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`;
+        
+        function fetchSchools() {
+                axios
+                    .get('http://localhost:8080/schools').then(response => {
+                        if (response) {
+                            if (response.data.httpStatus == "OK") {
+                                toaster.show(`Schools fetched`, {
+                                    type: "success"
+                                });
+                                schools.value = response.data.data
+                            } else {
+                                toaster.show(response.data.message, {
+                                    type: "warning"
+                                });
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        toaster.error(`Failed to fetch schools... - ${error}`, {
+                            type: "error",
+                        });
+                    })
+                    .finally(() => this.loading = false)
+        }
+
+         onMounted(() => {
+            fetchSchools()
+        });
+
+        return {
+            toaster,
+            schools
+        }
+    }
 }
 </script>
 

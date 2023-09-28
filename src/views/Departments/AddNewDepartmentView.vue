@@ -16,10 +16,12 @@
                                         placeholder="Computer Science">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput8" class="form-label text-primary">School<span
+                                    <label for="exampleFormControlInput8" class="form-label text-primary">Schools<span
                                             class="required">*</span></label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput8"
-                                        placeholder="School">
+                                    <select class="form-control" aria-label="Default select example">
+    								  <option selected>Select</option>
+    								  <option value="1" v-for="school in schools" :key="school">{{ school.schoolName }}</option>
+    								</select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea2" class="form-label text-primary">Short description<span
@@ -41,8 +43,54 @@
 </div></template>
 
 <script>
+import { reactive, ref } from '@vue/reactivity';
+import { createToaster } from "@meforma/vue-toaster";
+import { onMounted } from '@vue/runtime-core';
+import axios from 'axios'
+
+axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`;
+
 export default {
-    name: "Add New Department"
+    name: "Add New Department",
+    setup(){
+        const toaster = createToaster({
+            position: "top-right",
+            pauseOnHover: "true",
+            dismissible: "true"
+        });
+
+        let schools = ref([]);
+        
+        function fetchSchools() {
+            axios
+                .get('http://localhost:8080/schools').then(response => {
+                    if (response) {
+                        if (response.data.httpStatus == "OK") {
+                            schools.value = response.data.data
+                        } else {
+                            toaster.show(response.data.message, {
+                                type: "warning"
+                            });
+                        }
+                    }
+                })
+                .catch(error => {
+                    toaster.error(`Failed to fetch schools... - ${error}`, {
+                        type: "error",
+                    });
+                })
+                .finally(() => this.loading = false)
+        }
+
+        onMounted(() => {
+            fetchSchools()
+        });
+
+        return {
+            schools,
+            toaster
+        }
+    }
 }
 </script>
 

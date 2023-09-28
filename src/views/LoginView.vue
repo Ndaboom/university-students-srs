@@ -1,8 +1,6 @@
 <script>
 import { reactive } from '@vue/reactivity';
 import { createToaster } from "@meforma/vue-toaster";
-import { mapActions } from 'pinia';
-import { authStore } from '@/stores/index';
 import axios from 'axios'
 
 export default {
@@ -20,14 +18,13 @@ export default {
       dismissible: "true"
     });
 
-    const headers = {
-      'Content-type': 'application/json',
-      'Custom-Header': 'Custom-Value', // Add any custom headers if required
-    };
-
     function Login(e) {
       e.preventDefault()
-      if (form.username.value != "" && form.password.value != "") {
+      if (form.username.value == "" && form.password.value == "") {
+          toaster.show(`Please fill all required fields`, {
+          type: "error"
+        })
+      }else {
         //Axios request
         axios
           .post('http://localhost:8080/auth/generateToken', form)
@@ -37,7 +34,7 @@ export default {
                 toaster.show(`Connecté avec success`, {
                   type: "success"
                 });
-                localStorage.setItem('token', response.data);
+                localStorage.setItem('token', response.data.data);
                 window.location = "/home";
               } else {
                 toaster.show(response.data.message, {
@@ -47,20 +44,13 @@ export default {
             }
           })
           .catch(error => {
-            toaster.error(`Something went wrong please try again... - ${error}`, {
+            toaster.error(`Incorrect credentials`, {
               type: "error",
             });
           })
           .finally(() => this.loading = false)
         //Axios request
         //window.location = "/home";
-      } else {
-        username,
-          password,
-          console.log("Please fill all required fields")
-          toaster.show(`Veuiller remplir tous les champs`, {
-          type: "error"
-          })
       }
     }
 
