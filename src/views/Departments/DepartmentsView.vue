@@ -45,13 +45,13 @@
                                                 <input type="checkbox" class="form-check-input" id="checkAll" required="">
                                             </th>
                                             <th>Name</th>
-                                            <th>School</th>
+                                            <!-- <th>School</th> -->
                                             <th>Description</th>
                                             <th class="text-end">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for="department in departments" :key="department">
                                             <td>
                                                 <div class="checkbox me-0 align-self-center">
                                                     <div class="custom-control custom-checkbox ">
@@ -62,11 +62,11 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <h4 class="mb-0">Computer Science</h4>
+                                                <h4 class="mb-0">{{ department.departmentName }}</h4>
                                             </td>
-                                            <td><span class="text-primary font-w600">Science and technology</span></td>
+                                            <!-- <td><span class="text-primary font-w600">Science and technology</span></td> -->
                                             <td>
-                                                <h6 class="mb-0">Short description</h6>
+                                                <h6 class="mb-0">{{ department.departmentDescription }}</h6>
                                             </td>
                                           
                                             <td>
@@ -105,8 +105,54 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
+import { createToaster } from "@meforma/vue-toaster";
+import { onMounted } from '@vue/runtime-core';
+import axios from 'axios'
+
 export default {
     name: "Departments",
+    setup(){
+        const toaster = createToaster({
+            position: "top-right",
+            pauseOnHover: "true",
+            dismissible: "true"
+        });
+
+        const departments = ref([]);
+        axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`;
+
+        function fetchDepartments() {
+            axios
+                .get('http://localhost:8080/departments').then(response => {
+                    if (response) {
+                        if (response.data.httpStatus == "OK") {
+                            toaster.show(`Departments fetched`, {
+                                type: "success"
+                            });
+                            departments.value = response.data.data
+                        } else {
+                            toaster.show(response.data.message, {
+                                type: "warning"
+                            });
+                        }
+                    }
+                })
+                .catch(error => {
+                    toaster.error(`Failed to fetch schools... - ${error}`, {
+                        type: "error",
+                    });
+                })
+                .finally(() => this.loading = false)
+        }
+
+        onMounted(() => {
+            fetchDepartments()
+        });
+        return {
+            departments,
+        }
+    }
     
 }
 </script>
