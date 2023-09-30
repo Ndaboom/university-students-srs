@@ -67,7 +67,7 @@ export default {
 
 						<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 								<i class="material-symbols-outlined">school</i>
-								<span class="nav-text">School</span>
+								<span class="nav-text">Department</span>
 							</a>
 							<ul aria-expanded="false">
 								<li>
