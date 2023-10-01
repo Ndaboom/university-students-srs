@@ -50,7 +50,7 @@
     											</tr>
     										</thead>
     										<tbody>
-    											<tr>
+    											<tr v-for="student in students" :key="student">
     												<td>
     													<div class="checkbox me-0 align-self-center">
     														<div class="custom-control custom-checkbox ">
@@ -61,7 +61,7 @@
     												</td>
     												<td>
     													<div class="trans-list">
-    														<img src="images/trans/1.jpg" alt="" class="avatar avatar-sm me-3">
+    														<img src="images/no-img-avatar.png" alt="" class="avatar avatar-sm me-3">
     														<h4>Samantha William</h4>
     													</div>
     												</td>
@@ -177,11 +177,58 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
+import { createToaster } from "@meforma/vue-toaster";
+import { onMounted } from '@vue/runtime-core';
+import axios from 'axios'
+
 import StudentCard from '../../components/StudentCard.vue';
 export default {
   name: "Students",
   components:{
     StudentCard,
+  },
+  setup(){
+	const toaster = createToaster({
+			position: "top-right",
+			pauseOnHover: "true",
+			dismissible: "true"
+		});
+
+		const students = ref([]);
+		axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`;
+
+		function fetchStudents() {
+			axios
+				.get('http://localhost:8080/students').then(response => {
+					if (response) {
+						if (response.data.httpStatus == "OK") {
+							toaster.show(`students fetched`, {
+								type: "success"
+							});
+							students.value = response.data.data
+						} else {
+							toaster.show(response.data.message, {
+								type: "warning"
+							});
+						}
+					}
+				})
+				.catch(error => {
+					toaster.error(`Failed to fetch students... - ${error}`, {
+						type: "error",
+					});
+				})
+				.finally(() => this.loading = false)
+		}
+
+		onMounted(() => {
+			fetchStudents()
+		});
+
+	return {
+		students
+	}
   }
 }
 </script>
