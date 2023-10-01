@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import { reactive, ref } from '@vue/reactivity';
+import { ref } from '@vue/reactivity';
 import { createToaster } from "@meforma/vue-toaster";
 import { onMounted } from '@vue/runtime-core';
 import axios from 'axios'
