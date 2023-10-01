@@ -31,7 +31,7 @@ export default {
           .then(response => {
             if (response) {
               if (response.data.httpStatus == "OK") {
-                toaster.show(`Connecté avec success`, {
+                toaster.show(`Connection successful`, {
                   type: "success"
                 });
                 localStorage.setItem('token', response.data.data);
@@ -83,12 +83,12 @@ export default {
   								<form @submit="Login">
   									<div class="text-center mb-4">
   										<h3 class="text-center mb-2 text-black">Sign In</h3>
-  										<span>Enter your email address or password to sign in</span>
+  										<span>Enter your username and password to sign in</span>
   									</div>
   								
   									<div class="mb-3">
-  										<label for="exampleFormControlInput1" class="form-label mb-2 fs-13 label-color font-w500">Email address</label>
-  									  <input type="text" v-model="form.username" class="form-control" id="exampleFormControlInput1" placeholder="hello@example.com">
+  										<label for="exampleFormControlInput1" class="form-label mb-2 fs-13 label-color font-w500">Username</label>
+  									  <input type="text" v-model="form.username" class="form-control" id="exampleFormControlInput1" placeholder="Username">
   									</div>
   									<div class="mb-3">
   										<label for="exampleFormControlInput1" class="form-label mb-2 fs-13 label-color font-w500">Password</label>

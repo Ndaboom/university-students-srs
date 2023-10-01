@@ -33,7 +33,7 @@
                     </div>
                     <div class="main-body-content">
                         <div class="main-body-content-column">
-                            <img src="images/avatar-2.jpeg" class="student-photo"/>
+                            <img src="images/no-img-avatar.png" class="student-photo"/>
                         </div>
                         <div class="main-body-content-column" style="padding: 5px;">
                             <span class="title-bold secondary-color">Names :</span> <span class="title-bold">KAMBALE NDABO SAMMY</span><br>
