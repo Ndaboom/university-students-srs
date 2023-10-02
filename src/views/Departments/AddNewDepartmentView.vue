@@ -90,6 +90,7 @@ export default {
 
         function addDepartment(e){
             e.preventDefault()
+            if(form.departmentName != "" && form.departmentDescription != "" && form.schoolId != ""){
             axios
                 .post('http://localhost:8080/departments', form).then(response => {
                     if (response) {
@@ -113,6 +114,11 @@ export default {
                     });
                 })
                 .finally(() => this.loading = false)
+            } else {
+                toaster.error(`Please, fill in all the required fields`, {
+                        type: "error",
+                    });
+            }
         }
 
         onMounted(() => {

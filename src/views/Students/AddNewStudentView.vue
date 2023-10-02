@@ -224,6 +224,8 @@ export default {
 			// if (this.form.studentImage) {
 			// 	formData.append('studentImage', this.form.studentImage);
 			// }
+
+			if(form.studentFirstName != "" && form.studentLastName != "" && form.studentClass != ""){
 			
 			axios
 				.post('http://localhost:8080/students', form).then(response => {
@@ -257,6 +259,11 @@ export default {
 					});
 				})
 				.finally(() => this.loading = false)
+			} else {
+					toaster.error(`Please fill in all the required fields`, {
+						type: "error",
+					});
+			}
 		}
 
 		onMounted(() => {

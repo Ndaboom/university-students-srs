@@ -94,7 +94,7 @@ export default {
   										<label for="exampleFormControlInput1" class="form-label mb-2 fs-13 label-color font-w500">Password</label>
   									  <input type="password" v-model="form.password" class="form-control" id="exampleFormControlInput2" placeholder="Password">
   									</div>
-  									<a href="javascript:void(0);" class="text-primary float-end mb-4">Forgot Password ?</a>
+  									<!-- <a href="javascript:void(0);" class="text-primary float-end mb-4">Forgot Password ?</a> -->
   									<button class="btn btn-block btn-primary" type="submit" :disabled="!form.username && !form.password">Sign In</button>
 									
   								</form>
