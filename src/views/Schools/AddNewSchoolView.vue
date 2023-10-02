@@ -63,7 +63,7 @@ export default {
 
         function addSchool(e){
             e.preventDefault()
-            console.log(localStorage.getItem('token'))
+            
             if (form.schoolName.valueOf != "" && form.schoolDescription.valueOf != "") {
             axios
                 .post('http://localhost:8080/schools', form).then(response => {
