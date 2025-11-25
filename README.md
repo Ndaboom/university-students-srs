@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run test:unit
 ```
+
+### Backend
+
+See [Spring boot backend](https://github.com/Ndaboom/university-student-srs-backend).
